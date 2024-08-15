@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch:
+jobs:
+  use_api_via_script:
+    runs-on: windows-latest
+    permissions:
+      issues: read
+    steps:
+      - name: Check out repo content
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.10.0
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: pnpm i --no-frozen-lockfile
+
+      - name: Run script
+        run: |
+          pnpm stat
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
