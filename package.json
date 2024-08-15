@@ -1,0 +1,25 @@
+{
+  "name": "statistic-dashboard",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A project to statistic opentiny activity info",
+  "packageManager": "pnpm@8.3.1",
+  "main": "index.js",
+  "scripts": {
+    "// ---------- 统计github信息 ----------": "",
+    "stat": "pnpm -C packages/statistic stat"
+  },
+  "author": "OpenTiny Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:opentiny/statistic-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opentiny/statistic-dashboard/issues"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=6.35"
+  }
+}
