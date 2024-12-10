@@ -298,7 +298,7 @@ const getAllScore = async ({ month, year, owner, repo }) => {
 }
 
 export const getAllRepoScore = async () => {
-  const month = 8
+  const month = 11
   const year = 2024
   const owner = 'opentiny'
   const repo = 'tiny-vue'
