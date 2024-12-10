@@ -9,10 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.35"
+    "vue": "^3.4.35",
+    "@opentiny/vue-design-smb": "~3.20.0",
+    "@opentiny/vue-theme": "~3.20.0",
+    "@opentiny/vue-config-provider": "~3.20.0",
+    "@opentiny/vue-grid": "~3.20.0",
+    "@opentiny/vue-grid-column": "~3.20.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "vite": "^5.4.0"
   }
 }
