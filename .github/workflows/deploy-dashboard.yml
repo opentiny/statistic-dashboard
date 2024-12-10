@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy Dashboard GitHub Pages
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -35,6 +35,13 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --no-frozen-lockfile
+
+      - name: Run script
+        run: |
+          pnpm stat
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
 
       - name: Build dashboard
         run: pnpm build

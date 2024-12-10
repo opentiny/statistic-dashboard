@@ -42,11 +42,11 @@
   const giteeStat = ref([])
 
   onMounted(() => {
-    fetch(`${import.meta.env.BASE_URL}test.json`).then(res => res.json()).then(data => {
-        const { giteeData, githubData } = data
-        githubStat.value = giteeData
-        githubContributors.value = Object.entries(githubData).map(([name, value]) => ({ name, ...value }))
-        giteeStat.value = giteeData
+    fetch(`${import.meta.env.BASE_URL}stat.json`).then(res => res.json()).then(data => {
+        const { gitee, github } = data
+        githubStat.value = gitee.overview
+        githubContributors.value = Object.entries(github.contributorsData).map(([name, value]) => ({ name, ...value }))
+        giteeStat.value = gitee.overview
     })
   })
   

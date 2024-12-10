@@ -11,8 +11,8 @@ const getAllData = async () => {
    Promise.all([giteePromise, githubPromise]).then(res => {
     const [giteeData, githubData] = res
     console.log('githubData', githubData)
-    const allData = { giteeData: { overview: giteeData }, githubData: { contributorsData: githubData, overview: giteeData  } }
-    fs.writeFileSync('./test.json', JSON.stringify(allData, null, 2) + '\n')
+    const allData = { gitee: { overview: giteeData }, github: { contributorsData: githubData, overview: giteeData  } }
+    fs.writeFileSync('../dashboard/public/stat.json', JSON.stringify(allData, null, 2) + '\n')
    })
 
 }
