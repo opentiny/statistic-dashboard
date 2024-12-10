@@ -196,6 +196,8 @@ const getAllData = async ({ owner, repo, year, month }) => {
     cacheData = await import(`./${repo}-data.json`).then(res => res).catch(() => null)
     if (cacheData) {
       console.log('使用静态缓存数据计算')
+      console.log(process.env.TOKEN)
+      console.log(process.env.GITEE_TOKEN)
       return cacheData
     }
   }
