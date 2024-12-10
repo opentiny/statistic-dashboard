@@ -294,18 +294,15 @@ const getAllScore = async ({ month, year, owner, repo }) => {
   statIssueScore({ data: issues, month, year, scoreMap })
   statReviewScore({ data: prsComments, month, year, scoreMap })
   statCommentScore({ data: issuesComments, month, year, scoreMap, issues })
-  console.log(scoreMap)
   return scoreMap
 }
 
-const getAllRepoScore = () => {
+export const getAllRepoScore = async () => {
   const month = 8
   const year = 2024
   const owner = 'opentiny'
   const repo = 'tiny-vue'
-  const map = getAllScore({ month, year, owner, repo })
-  
+  const map = await getAllScore({ month, year, owner, repo })
+  return map
 }
 
-
-getAllRepoScore()

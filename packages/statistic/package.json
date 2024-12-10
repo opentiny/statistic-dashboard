@@ -6,8 +6,8 @@
   "main": "./src/index.ts",
   "type": "module",
   "scripts": {
-    "// ---------- 统计github信息 ----------": "",
-    "stat": "esno ./src/github-stat.ts"
+    "// ---------- 统计开元仓库信息 ----------": "",
+    "stat": "esno ./src/index.ts"
   },
   "dependencies": {
     "esno": "^4.7.0",

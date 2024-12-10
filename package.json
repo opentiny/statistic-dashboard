@@ -7,7 +7,9 @@
   "main": "index.js",
   "scripts": {
     "// ---------- 统计github信息 ----------": "",
-    "stat": "pnpm -C packages/statistic stat"
+    "stat": "pnpm -C packages/statistic stat",
+    "build": "pnpm -C packages/dashboard build",
+    "dev": "pnpm -C packages/dashboard dev"
   },
   "author": "OpenTiny Team",
   "license": "MIT",
