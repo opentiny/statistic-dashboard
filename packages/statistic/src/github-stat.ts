@@ -12,19 +12,31 @@ const octokit = new Octokit({
 })
 
 const initScore = () => ({
-  pr: 0,
-  prReview: 0,
-  issue: 0,
-  issueComment: 0,
-  discussion: 0,
+  prScore: 0,
+  prNum: 0,
+  reviewScore: 0,
+  reviewNum: 0,
+  issueScore: 0,
+  issueNum: 0,
+  issueCommentScore: 0,
+  issueCommentNum: 0,
+  discussionScore: 0,
+  discussionNum: 0,
 })
 
 const scoreMap = {}
 
+const parseDate = (str) => {
+  const day = parseFloat(str.split('-')[2])
+  const month = parseFloat(str.split('-')[1])
+  const year = parseFloat(str.split('-')[0])
+
+  return { month, year, day }
+}
+
 const judgeFinish = ({data, pageSize, year, month}) => {
   const lastData = data[data.length - 1]
-  const dataMonth = parseFloat(lastData.created_at.split('-')[1])
-  const dataYear = parseFloat(lastData.created_at.split('-')[0])
+  const { month: dataMonth, year: dataYear } = parseDate(lastData.created_at)
   if (data.length < pageSize || (dataYear < year || dataMonth < month)) {
     return true
   } 
@@ -201,16 +213,28 @@ const getAllData = async ({ owner, repo, year, month }) => {
   }
   const issuesData = await getIssuesData({ owner, repo, year, month })
   // issue是没有pull_request字段
-  const issues = issuesData.filter(i => !i.pull_request) || []
+  const issues = issuesData.filter(i => !i.pull_request).filter(i => {
+    const { month: dataMonth, year: dataYear } = parseDate(i.created_at)
+    return dataYear === year && dataMonth === month
+  }) || []
   // 过滤已合入的PR
-  const prs = issuesData.filter(i => i.pull_request?.merged_at && i.closed_at) || []
+  const prs = issuesData.filter(i => i.pull_request?.merged_at && i.closed_at).filter(i => {
+    const { month: dataMonth, year: dataYear } = parseDate(i.pull_request.merged_at)
+    return dataYear === year && dataMonth === month
+  }) || []
   allData.issues = issues
   allData.prs = prs
 
   const issuesComments = await getIssuesComments({ owner, repo, year, month })
-  allData.issuesComments = issuesComments
+  allData.issuesComments = issuesComments.filter(i => {
+    const { month: dataMonth, year: dataYear } = parseDate(i.created_at)
+    return dataYear === year && dataMonth === month
+  })
   const prsComments = await getPrsComments({ owner, repo, year, month })
-  allData.prsComments = prsComments
+  allData.prsComments = prsComments.filter(i => {
+    const { month: dataMonth, year: dataYear } = parseDate(i.created_at)
+    return dataYear === year && dataMonth === month
+  })
   if (useCache && !cacheData) {
     fs.writeFileSync(filePath, JSON.stringify(allData, null, 2) + '\n')
   }
@@ -225,10 +249,12 @@ const isValidateTime = ({ key = 'create_at', item }) => {
 
 const statScore = ({scoreMap, type, name, score}) => {
   if (Object.prototype.hasOwnProperty.call(scoreMap, name)) {
-    scoreMap[name][type] += score
+    scoreMap[name][`${type}Score`] += score
+    scoreMap[name][`${type}Num`] += 1
   } else {
     scoreMap[name] = initScore()
-    scoreMap[name][type] = score
+    scoreMap[name][`${type}Score`] += score
+    scoreMap[name][`${type}Num`] += 1
   }
 }
 
@@ -258,7 +284,7 @@ const statIssueScore = ({ data, month, year, scoreMap }) => {
 const statReviewScore = ({ data, month, year, scoreMap }) => {
   data.filter(item => isValidateTime({ item })).forEach(item => {
     const name = item.user.login
-    statScore({ scoreMap, type: 'prReview', name, score: 1  })
+    statScore({ scoreMap, type: 'review', name, score: 1  })
   })
 }
 
@@ -297,9 +323,7 @@ const getAllScore = async ({ month, year, owner, repo }) => {
   return scoreMap
 }
 
-export const getAllRepoScore = async () => {
-  const month = 11
-  const year = 2024
+export const getAllRepoScore = async ({ month, year }) => {
   const owner = 'opentiny'
   const repo = 'tiny-vue'
   const map = await getAllScore({ month, year, owner, repo })

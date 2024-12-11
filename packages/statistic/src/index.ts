@@ -1,17 +1,19 @@
 import fs from 'fs-extra';
-import { getGiteeData } from './gitee-stat.ts' 
+import { getGiteeOverview } from './gitee-overview.ts' 
 import { getAllRepoScore } from './github-stat.ts'
+import { getGithubOverview } from './github-overview.ts'
 
 
 
 const getAllData = async () => {
-
-   const giteePromise = getGiteeData()
-   const githubPromise = getAllRepoScore()
-   Promise.all([giteePromise, githubPromise]).then(res => {
-    const [giteeData, githubData] = res
-    console.log('githubData', githubData)
-    const allData = { gitee: { overview: giteeData }, github: { contributorsData: githubData, overview: giteeData  } }
+   const month = 11
+   const year = 2024
+   const githubOverview = getGithubOverview()
+   const giteePromise = getGiteeOverview()
+   const githubPromise = getAllRepoScore({ month, year })
+   Promise.all([githubOverview, giteePromise, githubPromise]).then(res => {
+    const [githubOverviewData, giteeData, githubData] = res
+    const allData = { month, gitee: { overview: giteeData }, github: { contributorsData: githubData, overview: githubOverviewData  } }
     fs.writeFileSync('../dashboard/public/stat.json', JSON.stringify(allData, null, 2) + '\n')
    })
 

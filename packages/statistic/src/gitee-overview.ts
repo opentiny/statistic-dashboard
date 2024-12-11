@@ -42,19 +42,23 @@ const getAllRepoPulls = async ({ owner, repos }) => {
 
 const getReposInfo = async () => {
     const allReposInfo =  await fetch(`https://gitee.com/api/v5/orgs/opentiny/repos?access_token=${TOKEN}&type=all&page=1&per_page=20`).then(res => res.json())
-    return allReposInfo.map(item => {
-        const { name, stargazers_count: stars, forks_count: forks, created_at } = item
-        return {
-            name: name.trim(),
-            stars,
-            forks,
-            created_at
-        }
-
-    }) || []
+    if (Array.isArray(allReposInfo)) {
+        return allReposInfo.map(item => {
+            const { name, stargazers_count: stars, forks_count: forks, created_at } = item
+            return {
+                name: name.trim(),
+                stars,
+                forks,
+                created_at
+            }
+    
+        }) || []
+    } else {
+       throw new Error(JSON.stringify(allReposInfo));
+    }
 }
 
-export const getGiteeData = async () => {
+export const getGiteeOverview = async () => {
     const owner = 'opentiny'
     // const repos = ['tiny-vue', 'tiny-ng', 'tiny-engine', 'tiny-cli']
     const allData = await getReposInfo()

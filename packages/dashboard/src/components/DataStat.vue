@@ -1,34 +1,35 @@
 <template>
-    <h2>GitHub统计信息</h2>
-    <tiny-grid :data="githubStat">
+    <h2>github统计信息</h2>
+    <tiny-grid :data="githubStat" max-height="800px">
       <tiny-grid-column type="index" width="60"></tiny-grid-column>
       <tiny-grid-column field="name" title="项目名称"></tiny-grid-column>
-      <tiny-grid-column field="stars" title="stars数"></tiny-grid-column>
-      <tiny-grid-column field="forks" title="forks数"></tiny-grid-column>
-      <tiny-grid-column field="issuesNum" title="issues数"></tiny-grid-column>
-      <tiny-grid-column field="pullsNum" title="PR数"></tiny-grid-column>
-      <tiny-grid-column field="contributorsNum" title="贡献者数量"></tiny-grid-column>
+      <tiny-grid-column field="stars" title="stars数" sortable></tiny-grid-column>
+      <tiny-grid-column field="forks" title="forks数" sortable></tiny-grid-column>
+      <tiny-grid-column field="issuesNum" title="issues数" sortable></tiny-grid-column>
+      <tiny-grid-column field="pullsNum" title="PR数" sortable></tiny-grid-column>
+      <tiny-grid-column field="contributorsNum" title="贡献者数量" sortable></tiny-grid-column>
     </tiny-grid>
 
-    <h2>GitHub贡献者8月份统计信息</h2>
+    <h2>TinyVue贡献者{{month}}月份github统计信息</h2>
     <tiny-grid :data="githubContributors" max-height="800px">
       <tiny-grid-column type="index" width="60"></tiny-grid-column>
       <tiny-grid-column field="name" title="githubID"></tiny-grid-column>
-      <tiny-grid-column field="pr" title="PR数"></tiny-grid-column>
-      <tiny-grid-column field="prReview" title="review数"></tiny-grid-column>
-      <tiny-grid-column field="issue" title="创建issue数"></tiny-grid-column>
-      <tiny-grid-column field="issueComment" title="回复issue数"></tiny-grid-column>
-      <tiny-grid-column field="discussion" title="创建discussion数"></tiny-grid-column>
+      <tiny-grid-column field="prScore" title="PR得分" sortable></tiny-grid-column>
+      <tiny-grid-column field="reviewScore" title="review得分" sortable></tiny-grid-column>
+      <tiny-grid-column field="issueScore" title="issue得分" sortable></tiny-grid-column>
+      <tiny-grid-column field="issueCommentScore" title="回复issue得分" sortable></tiny-grid-column>
+      <tiny-grid-column field="discussionScore" title="discussion得分" sortable></tiny-grid-column>
+      <tiny-grid-column field="all" title="总得分" sortable></tiny-grid-column>
     </tiny-grid>
 
     <h2>Gitee统计信息</h2>
-    <tiny-grid :data="giteeStat">
+    <tiny-grid :data="giteeStat" max-height="800px">
       <tiny-grid-column field="name" title="项目名称"></tiny-grid-column>
-      <tiny-grid-column field="stars" title="stars数"></tiny-grid-column>
-      <tiny-grid-column field="forks" title="forks数"></tiny-grid-column>
-      <tiny-grid-column field="issuesNum" title="issues数"></tiny-grid-column>
-      <tiny-grid-column field="pullsNum" title="PR数"></tiny-grid-column>
-      <tiny-grid-column field="contributorsNum" title="贡献者数量"></tiny-grid-column>
+      <tiny-grid-column field="stars" title="stars数" sortable></tiny-grid-column>
+      <tiny-grid-column field="forks" title="forks数" sortable></tiny-grid-column>
+      <tiny-grid-column field="issuesNum" title="issues数" sortable></tiny-grid-column>
+      <tiny-grid-column field="pullsNum" title="PR数" sortable></tiny-grid-column>
+      <tiny-grid-column field="contributorsNum" title="贡献者数量" sortable></tiny-grid-column>
     </tiny-grid>
   </template>
   
@@ -40,13 +41,19 @@
   const githubStat = ref([])
   const githubContributors = ref([])
   const giteeStat = ref([])
+  const month = ref(new Date().getMonth())
 
   onMounted(() => {
     fetch(`${import.meta.env.BASE_URL}stat.json`).then(res => res.json()).then(data => {
         const { gitee, github } = data
-        githubStat.value = gitee.overview
-        githubContributors.value = Object.entries(github.contributorsData).map(([name, value]) => ({ name, ...value }))
-        giteeStat.value = gitee.overview
+        githubStat.value = github.overview.sort((a, b) => b.stars - a.stars)
+        githubContributors.value = Object.entries(github.contributorsData).map(([name, value]) => {
+
+          const all = value.prScore + value.reviewScore + value.issueScore + value.issueCommentScore + value.discussionScore
+          return { name, ...value, all }
+        })
+        giteeStat.value = gitee.overview.sort((a, b) => b.stars - a.stars)
+        month.value = data.month
     })
   })
   
