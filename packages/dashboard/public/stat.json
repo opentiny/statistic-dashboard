@@ -1,0 +1,598 @@
+{
+  "month": 12,
+  "gitee": {
+    "overview": [
+      {
+        "name": "tiny-vue",
+        "stars": 246,
+        "forks": 55,
+        "created_at": "2022-11-14T17:22:11+08:00",
+        "issuesNum": 8,
+        "pullsNum": 0,
+        "contributorsNum": 91
+      },
+      {
+        "name": "fluent-editor",
+        "stars": 2,
+        "forks": 0,
+        "created_at": "2024-11-04T19:38:54+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 7
+      },
+      {
+        "name": "ng",
+        "stars": 7,
+        "forks": 4,
+        "created_at": "2022-11-14T16:28:59+08:00",
+        "issuesNum": 0,
+        "pullsNum": 6,
+        "contributorsNum": 7
+      },
+      {
+        "name": "tiny-charts",
+        "stars": 4,
+        "forks": 2,
+        "created_at": "2024-04-29T16:25:35+08:00",
+        "issuesNum": 1,
+        "pullsNum": 0,
+        "contributorsNum": 14
+      },
+      {
+        "name": "tiny-cli",
+        "stars": 4,
+        "forks": 5,
+        "created_at": "2022-11-14T16:34:57+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 14
+      },
+      {
+        "name": "tiny-engine",
+        "stars": 144,
+        "forks": 46,
+        "created_at": "2023-09-18T09:30:47+08:00",
+        "issuesNum": 5,
+        "pullsNum": 5,
+        "contributorsNum": 32
+      },
+      {
+        "name": "tiny-engine-data-center",
+        "stars": 7,
+        "forks": 5,
+        "created_at": "2023-12-23T15:11:03+08:00",
+        "issuesNum": 0,
+        "pullsNum": 3,
+        "contributorsNum": 4
+      },
+      {
+        "name": "tiny-engine-webservice",
+        "stars": 5,
+        "forks": 5,
+        "created_at": "2023-12-23T15:10:34+08:00",
+        "issuesNum": 0,
+        "pullsNum": 6,
+        "contributorsNum": 8
+      },
+      {
+        "name": "tiny-vue-playground",
+        "stars": 1,
+        "forks": 1,
+        "created_at": "2023-08-04T20:06:53+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 2
+      },
+      {
+        "name": "tiny-vue-renderless",
+        "stars": 0,
+        "forks": 4,
+        "created_at": "2022-11-14T17:19:01+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 10
+      },
+      {
+        "name": "tiny-vue-theme",
+        "stars": 0,
+        "forks": 3,
+        "created_at": "2022-11-14T17:21:11+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 13
+      },
+      {
+        "name": "tiny-vue-theme-mobile",
+        "stars": 1,
+        "forks": 3,
+        "created_at": "2022-11-14T17:20:16+08:00",
+        "issuesNum": 0,
+        "pullsNum": 0,
+        "contributorsNum": 6
+      }
+    ]
+  },
+  "github": {
+    "contributorsData": {
+      "552847957": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 2,
+        "issueNum": 2,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "kagol": {
+        "prScore": 9,
+        "prNum": 8,
+        "reviewScore": 1,
+        "reviewNum": 1,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 1,
+        "issueCommentNum": 1,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "zzcr": {
+        "prScore": 34,
+        "prNum": 24,
+        "reviewScore": 7,
+        "reviewNum": 7,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 2,
+        "issueCommentNum": 2,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "wuyiping0628": {
+        "prScore": 4,
+        "prNum": 2,
+        "reviewScore": 2,
+        "reviewNum": 2,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 1,
+        "issueCommentNum": 1,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "shenjunjian": {
+        "prScore": 5,
+        "prNum": 5,
+        "reviewScore": 1,
+        "reviewNum": 1,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "Davont": {
+        "prScore": 1,
+        "prNum": 1,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "MomoPoppy": {
+        "prScore": 5,
+        "prNum": 3,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 2,
+        "issueCommentNum": 2,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "gimmyhehe": {
+        "prScore": 2,
+        "prNum": 1,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 1,
+        "issueCommentNum": 1,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "Youyou-smiles": {
+        "prScore": 1,
+        "prNum": 1,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "James-9696": {
+        "prScore": 2,
+        "prNum": 1,
+        "reviewScore": 2,
+        "reviewNum": 2,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 1,
+        "issueCommentNum": 1,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "Leebusan": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "KyLenMou": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "GoldenPrince123": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "weixingqi": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "qq785478075": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "RZGD": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "STofone": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 1,
+        "issueNum": 1,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "coderabbitai[bot]": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 55,
+        "reviewNum": 55,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 36,
+        "issueCommentNum": 36,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "mengqiuleo": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 1,
+        "reviewNum": 1,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 0,
+        "issueCommentNum": 0,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "Issues-translate-bot": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 8,
+        "issueCommentNum": 8,
+        "discussionScore": 0,
+        "discussionNum": 0
+      },
+      "github-actions[bot]": {
+        "prScore": 0,
+        "prNum": 0,
+        "reviewScore": 0,
+        "reviewNum": 0,
+        "issueScore": 0,
+        "issueNum": 0,
+        "issueCommentScore": 1,
+        "issueCommentNum": 1,
+        "discussionScore": 0,
+        "discussionNum": 0
+      }
+    },
+    "overview": [
+      {
+        "name": "tiny-vue",
+        "stars": 1750,
+        "forks": 271,
+        "allIssues": 204,
+        "pullsNum": 12,
+        "issuesNum": 192,
+        "contributorsNum": 76
+      },
+      {
+        "name": "tiny-vue-renderless",
+        "stars": 27,
+        "forks": 17,
+        "allIssues": 4,
+        "pullsNum": 4,
+        "issuesNum": 0,
+        "contributorsNum": 9
+      },
+      {
+        "name": "tiny-cli",
+        "stars": 130,
+        "forks": 37,
+        "allIssues": 14,
+        "pullsNum": 1,
+        "issuesNum": 13,
+        "contributorsNum": 13
+      },
+      {
+        "name": "tiny-vue-theme-mobile",
+        "stars": 24,
+        "forks": 15,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 5
+      },
+      {
+        "name": "tiny-vue-theme",
+        "stars": 18,
+        "forks": 17,
+        "allIssues": 5,
+        "pullsNum": 5,
+        "issuesNum": 0,
+        "contributorsNum": 11
+      },
+      {
+        "name": "ng",
+        "stars": 106,
+        "forks": 10,
+        "allIssues": 19,
+        "pullsNum": 2,
+        "issuesNum": 17,
+        "contributorsNum": 5
+      },
+      {
+        "name": "tiny-cli-extensions",
+        "stars": 3,
+        "forks": 1,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "browser-require",
+        "stars": 0,
+        "forks": 0,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 0
+      },
+      {
+        "name": "eslint-config",
+        "stars": 6,
+        "forks": 2,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "ai-vue",
+        "stars": 22,
+        "forks": 8,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "tiny-vue-playground",
+        "stars": 20,
+        "forks": 12,
+        "allIssues": 9,
+        "pullsNum": 1,
+        "issuesNum": 8,
+        "contributorsNum": 5
+      },
+      {
+        "name": "cross-framework-component",
+        "stars": 9,
+        "forks": 5,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "tiny-engine",
+        "stars": 2072,
+        "forks": 310,
+        "allIssues": 79,
+        "pullsNum": 27,
+        "issuesNum": 52,
+        "contributorsNum": 28
+      },
+      {
+        "name": "dtt-cfc",
+        "stars": 1,
+        "forks": 1,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "tiny-engine-generate-preview",
+        "stars": 10,
+        "forks": 6,
+        "allIssues": 1,
+        "pullsNum": 0,
+        "issuesNum": 1,
+        "contributorsNum": 2
+      },
+      {
+        "name": "tiny-engine-webservice",
+        "stars": 39,
+        "forks": 37,
+        "allIssues": 7,
+        "pullsNum": 2,
+        "issuesNum": 5,
+        "contributorsNum": 8
+      },
+      {
+        "name": "tiny-engine-data-center",
+        "stars": 39,
+        "forks": 29,
+        "allIssues": 2,
+        "pullsNum": 0,
+        "issuesNum": 2,
+        "contributorsNum": 3
+      },
+      {
+        "name": "tiny-engine-demo",
+        "stars": 0,
+        "forks": 0,
+        "allIssues": 1,
+        "pullsNum": 1,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "tiny-engine-webservice-java",
+        "stars": 0,
+        "forks": 2,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 3
+      },
+      {
+        "name": "mini-tiny-vue",
+        "stars": 8,
+        "forks": 2,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "tiny-charts",
+        "stars": 73,
+        "forks": 23,
+        "allIssues": 3,
+        "pullsNum": 1,
+        "issuesNum": 2,
+        "contributorsNum": 10
+      },
+      {
+        "name": "statistic-dashboard",
+        "stars": 1,
+        "forks": 1,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      },
+      {
+        "name": "fluent-editor",
+        "stars": 171,
+        "forks": 22,
+        "allIssues": 21,
+        "pullsNum": 1,
+        "issuesNum": 20,
+        "contributorsNum": 7
+      },
+      {
+        "name": "tiny-engine-backend-java",
+        "stars": 1,
+        "forks": 3,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 4
+      },
+      {
+        "name": "quill-toolbar-tip",
+        "stars": 2,
+        "forks": 1,
+        "allIssues": 0,
+        "pullsNum": 0,
+        "issuesNum": 0,
+        "contributorsNum": 1
+      }
+    ]
+  }
+}
