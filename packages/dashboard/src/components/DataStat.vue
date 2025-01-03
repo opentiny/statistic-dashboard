@@ -1,6 +1,6 @@
 <template>
     <h2>github统计信息</h2>
-    <tiny-grid :data="githubStat" max-height="800px">
+    <tiny-grid :data="githubStat" show-footer :footer-method="footerMethod" max-height="500px" >
       <tiny-grid-column type="index" width="60"></tiny-grid-column>
       <tiny-grid-column field="name" title="项目名称"></tiny-grid-column>
       <tiny-grid-column field="stars" title="stars数" sortable></tiny-grid-column>
@@ -11,7 +11,7 @@
     </tiny-grid>
 
     <h2>TinyVue贡献者{{month}}月份github统计信息</h2>
-    <tiny-grid :data="githubContributors" max-height="800px">
+    <tiny-grid :data="githubContributors" max-height="500px">
       <tiny-grid-column type="index" width="60"></tiny-grid-column>
       <tiny-grid-column field="name" title="githubID"></tiny-grid-column>
       <tiny-grid-column field="prScore" title="PR得分" sortable></tiny-grid-column>
@@ -23,7 +23,8 @@
     </tiny-grid>
 
     <h2>Gitee统计信息</h2>
-    <tiny-grid :data="giteeStat" max-height="800px">
+    <tiny-grid :data="giteeStat" show-footer :footer-method="footerMethod" max-height="500px">
+      <tiny-grid-column type="index" width="60"></tiny-grid-column>
       <tiny-grid-column field="name" title="项目名称"></tiny-grid-column>
       <tiny-grid-column field="stars" title="stars数" sortable></tiny-grid-column>
       <tiny-grid-column field="forks" title="forks数" sortable></tiny-grid-column>
@@ -42,6 +43,23 @@
   const githubContributors = ref([])
   const giteeStat = ref([])
   const month = ref(new Date().getMonth())
+
+  const footerMethod = ({ columns, data }) => {
+
+      return [
+        columns.map((column, columnIndex) => {
+          if (columnIndex === 0) {
+            return '总计'
+          }
+
+          if (columnIndex > 1) {
+            return data.map((item) => item[column.property]).reduce((acc, item) => acc + item)
+          }
+
+          return null
+        }),
+      ]
+    }
 
   onMounted(() => {
     fetch(`${import.meta.env.BASE_URL}stat.json`).then(res => res.json()).then(data => {

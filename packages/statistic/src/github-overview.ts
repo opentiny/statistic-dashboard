@@ -46,6 +46,21 @@ const getPulls = ({ owner, repo }) =>
     .request('GET /repos/{owner}/{repo}/pulls', {
       owner,
       repo,
+      state: 'all',
+      page: 1,
+      per_page: 1,
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+    .then((res) => getTotalNum(res))
+
+const getIssues = ({ owner, repo }) =>
+  octokit
+    .request('GET /repos/{owner}/{repo}/issues', {
+      owner,
+      repo,
+      state: 'all',
       page: 1,
       per_page: 1,
       headers: {
@@ -56,6 +71,11 @@ const getPulls = ({ owner, repo }) =>
 
 const getAllRepoPulls = async ({ owner, repos }) => {
   const promises = repos.map((repo) => getPulls({ owner, repo }))
+  return Promise.all(promises)
+}
+
+const getAllRepoIssues = async ({ owner, repos }) => {
+  const promises = repos.map((repo) => getIssues({ owner, repo }))
   return Promise.all(promises)
 }
 
@@ -72,8 +92,7 @@ const getReposInfo = async () => {
         res.data?.map((item) => ({
           name: item.name.trim(),
           stars: item.stargazers_count,
-          forks: item.forks,
-          allIssues: item.open_issues
+          forks: item.forks
         })) || []
       )
     })
@@ -89,11 +108,16 @@ export const getGithubOverview = async () => {
   const allData = await getReposInfo()
   const repos = allData.map((i) => i.name)
   const pullsNumArr = await getAllRepoPulls({ owner, repos })
+  const issuesNumArr = await getAllRepoIssues({ owner, repos })
   // 统计pr数量
   allData.forEach((item, index) => {
       const pullsNum = pullsNumArr[index]
       item.pullsNum = pullsNum
-      item.issuesNum = item.allIssues - pullsNum
+  })
+  // 统计issues数量
+  allData.forEach((item, index) => {
+      const allIssuesNum = issuesNumArr[index]
+      item.issuesNum = allIssuesNum - item.pullsNum
   })
   const contributorsNumArr = await getAllRepoContributors({ owner, repos })
   // 统计contributors数量
