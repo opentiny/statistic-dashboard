@@ -1,6 +1,7 @@
 <template>
   <div class="grid-title-box">
     <h2>github统计信息</h2>
+
     <tiny-button @click="doExport('1')">导出</tiny-button>
   </div>
     <tiny-grid ref="gridRef1" :data="githubStat" show-footer :footer-method="footerMethod" max-height="500px" >
@@ -12,6 +13,7 @@
       <tiny-grid-column field="pullsNum" title="PR数" sortable></tiny-grid-column>
       <tiny-grid-column field="contributorsNum" title="贡献者数量" sortable></tiny-grid-column>
     </tiny-grid>
+
 
     <div class="grid-title-box">
       <h2>TinyVue贡献者{{month}}月份github统计信息</h2>
@@ -27,6 +29,7 @@
       <tiny-grid-column field="discussionScore" title="discussion得分" sortable></tiny-grid-column>
       <tiny-grid-column field="all" title="总得分" sortable></tiny-grid-column>
     </tiny-grid>
+
 
     <div class="grid-title-box">
       <h2>Gitee统计信息</h2>
@@ -70,6 +73,7 @@
         }),
       ]
     }
+
 
 const gridRef1 = ref()
 const gridRef2 = ref()
