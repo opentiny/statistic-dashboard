@@ -14,6 +14,7 @@
     "@opentiny/vue-theme": "~3.20.0",
     "@opentiny/vue-config-provider": "~3.20.0",
     "@opentiny/vue-grid": "~3.20.0",
+    "@opentiny/vue-button": "~3.20.0",
     "@opentiny/vue-grid-column": "~3.20.0"
   },
   "devDependencies": {

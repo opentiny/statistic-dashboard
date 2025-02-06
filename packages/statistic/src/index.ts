@@ -6,8 +6,8 @@ import { getGithubOverview } from './github-overview.ts'
 
 
 const getAllData = async () => {
-   const month = 11
-   const year = 2024
+   const month = 01
+   const year = 2025
    const githubOverview = getGithubOverview()
    const giteePromise = getGiteeOverview()
    const githubPromise = getAllRepoScore({ month, year })
