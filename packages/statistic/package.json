@@ -12,7 +12,8 @@
   "dependencies": {
     "esno": "^4.7.0",
     "fast-glob": "^3.2.12",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "graphql-request": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
