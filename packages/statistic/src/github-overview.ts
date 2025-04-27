@@ -63,10 +63,6 @@ const getTotalNum = (res) => {
   const linkStr = res.headers.link
   if (linkStr) {
     const lastLink = linkStr.split(',')[1]
-    console.log('linkStr', linkStr)
-    if (!lastLink) {
-      return res.data?.length || 0
-    }
     const len = Number(lastLink.match(/page=([\d]+)&/)[1])
     return len
   }
@@ -125,7 +121,8 @@ const getReposInfo = async () => {
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
       },
-      org: 'opentiny'
+      org: 'opentiny',
+      per_page: 100
     })
     .then((res) => {
       return (
